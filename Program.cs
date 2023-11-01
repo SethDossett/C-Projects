@@ -1,34 +1,31 @@
-﻿using System;
-
-public class Program
+﻿namespace Math_Game
 {
-    public static void Main(string[] args)
+    internal class Program
     {
-        void Menu()
+        public static Menu menu = new Menu();
+
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome, Please choose an operation");
-            int choice = 0;
-            while (true)
+            menu.OpenMenu();
+        }
+        public static void QuitApp()
+        {
+            Console.Clear();
+            Console.WriteLine("Quit Application");
+        }
+        public static string GetInput()
+        {
+            string result = "";
+            do
             {
-                try
-                {
-                    choice = int.Parse(Console.ReadLine());
-                    if (choice == 1) Console.WriteLine("Hey");
-                    else { 
-                    
-                        Console.WriteLine("Try Again");
-                    }
-                }
-                catch
-                {
-                    
-                }
-                break;
-            }
+                result = Console.ReadLine();
+                if (string.IsNullOrEmpty(result))
+                    Console.WriteLine("Empty Input, Please try again");
+
+            } while (string.IsNullOrEmpty(result));
+
+            return result;
         }
 
-        Menu();
     }
 }
-
-
