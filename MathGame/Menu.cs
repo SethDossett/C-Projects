@@ -50,7 +50,19 @@
         }
         private void ShowPreviousGames()
         {
-            Console.WriteLine("Previous games");
+            Console.WriteLine("Previous games:");
+            if (Program.Scores.Count == 0) Console.WriteLine("No Previous Games");
+
+            for (int i = 0; i < Program.Scores.Count; i++)
+            {
+                Console.WriteLine(Program.Scores[i]);
+            }
+
+            //press any key to go back to Menu
+            Console.WriteLine("Press any key to return to menu");
+            Console.ReadKey(false);
+            Console.Clear();
+            Program.menu.OpenMenu();
         }
         private void ValidChoice(int choice)
         {

@@ -27,7 +27,19 @@
                 GetProblem(gameChoice);
                 Results(CheckAnswer(_correctAnswer));
             }
+            EndGame();
+        }
+        private void EndGame()
+        {
             Console.WriteLine("Game Over! You Got " + _answersCorrect + " of " + _numberOfQuestions + " right!");
+            Program.Scores.Add($"Game {Program.Scores.Count + 1} : {_answersCorrect} of {_numberOfQuestions}");
+
+            //press any key to go back to Menu
+            Console.WriteLine("Press any key to return to menu");
+            Console.ReadKey(false);
+            Console.Clear();
+            Program.menu.OpenMenu();
+
         }
         private void GetProblem(int choice)
         {

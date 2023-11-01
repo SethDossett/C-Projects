@@ -3,6 +3,7 @@
     internal class Program
     {
         public static Menu menu = new Menu();
+        public static List<string> Scores = new List<string>();
 
         public static void Main(string[] args)
         {
