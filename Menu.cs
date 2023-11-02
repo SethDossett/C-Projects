@@ -10,6 +10,7 @@
         {
             Console.WriteLine("Press 1 to Play Game.");
             Console.WriteLine("Press 2 to See Previous Games.");
+            Console.WriteLine("Press 3 to Quit.");
             int choice = 0;
             while (true)
             {
@@ -24,6 +25,11 @@
                     else if (choice == 2)
                     {
                         ShowPreviousGames();
+                        break;
+                    }
+                    else if (choice == 3)
+                    {
+                        Program.QuitApp();
                         break;
                     }
                     else
@@ -46,7 +52,7 @@
             Console.WriteLine("Press 2 for Subtraction.");
             Console.WriteLine("Press 3 for Multiplication.");
             Console.WriteLine("Press 4 for Division.");
-            Console.WriteLine("Press 5 to Quit.");
+            Console.WriteLine("Press 5 to return to menu.");
         }
         private void ShowPreviousGames()
         {
@@ -68,7 +74,7 @@
         {
             if (choice == 5)
             {
-                Program.QuitApp();
+                OpenMenu();
                 return;
             }
             Game game = new Game();
@@ -77,6 +83,7 @@
         }
         private void GiveChoices()
         {
+            Console.Clear();
             Console.WriteLine("Welcome, Please choose an operation");
             int choice = 0;
             while (true)
