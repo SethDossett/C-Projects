@@ -1,32 +1,16 @@
-﻿namespace Math_Game
+﻿namespace Math_Game;
+
+internal class Program
 {
-    internal class Program
+    public static Menu menu = new Menu();
+
+
+    public static void Main(string[] args)
     {
-        public static Menu menu = new Menu();
-        public static List<string> Scores = new List<string>();
-
-        public static void Main(string[] args)
-        {
-            menu.OpenMenu();
-        }
-        public static void QuitApp()
-        {
-            Console.Clear();
-            Console.WriteLine("Quit Application");
-        }
-        public static string GetInput()
-        {
-            string result = "";
-            do
-            {
-                result = Console.ReadLine();
-                if (string.IsNullOrEmpty(result))
-                    Console.WriteLine("Empty Input, Please try again");
-
-            } while (string.IsNullOrEmpty(result));
-
-            return result;
-        }
-
+        Console.WriteLine($"Welcome, it's {DateTime.UtcNow.DayOfWeek} \n");
+        Console.WriteLine("Press any key to begin.");
+        Console.ReadKey(false);
+        menu.OpenMenu();
     }
+
 }
